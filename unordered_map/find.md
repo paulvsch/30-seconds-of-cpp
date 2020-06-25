@@ -1,6 +1,6 @@
 # find
 
-**Description :** This function is used to search for a specific key in an unordered map.
+**Description :** This function takes in a key and searches the unordered map for that key. If it is found, it returns an iterator to the element. If it is not found it returns an iterator to the element just past the end of the data.
 
 **Example** :
 
@@ -15,27 +15,17 @@ int main(){
     
     // inserting in to unordered_map with O(1) time on average
     mymap.insert({'A', 1});
+    mymap.insert({'C', 3});
     mymap.insert({'b', 2});
-    mymap.insert({'c', 3});
-  
-    //finding element in unordered_map O(1) average case. Rare worst case O(n)
-    if(mymap.find('A') != mymap.end()){
-        std::cout << "A found and value is " <<mymap['A']<< '\n'; 
+    
+    
+    //searches for an element in the unordered_map and prints it if found 
+    auto it = mymap.find('C');
+    if(it != mymap.end()){
+        std::cout << it->first << " = "<< it->second << '\n';
     }
-    else{
-        std::cout << "A not found"<< '\n';
-    }
-
-     //finding element in unordered_map O(1) average case. Rare worst case O(n)
-    if(mymap.find('d') != mymap.end()){
-        std::cout << "d found and value is " <<mymap['A']<< '\n'; 
-    }
-    else{
-        std::cout << "d not found"<< '\n';
-    }
-
     return 0;
 }
 
 ```
-**[Run Code](https://rextester.com/QEGP95417)**
+**[Run Code](https://rextester.com/RAKSGB77396)**
